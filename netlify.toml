@@ -6,4 +6,6 @@
   from = "/*"
   to = "/index.html"
   status = 200
-  force = true
+  # Do not force redirect — allow Netlify to serve static assets (CSS/JS) normally.
+  # For SPAs a plain catch-all is sufficient; forcing the rewrite causes assets
+  # like /assets/*.js to return index.html (text/html) which breaks module loading.
